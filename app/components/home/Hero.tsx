@@ -2,192 +2,341 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+
+// Full list of services from ServicesSummary
+const services = [
+  { 
+    title: 'General Freight', 
+    description: 'Standard shipping for palletized goods and general merchandise.',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Household Goods', 
+    description: 'Safe transport for residential moves and furniture.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Metal Sheets & Coils', 
+    description: 'Specialized flatbed transport for industrial metal products.',
+    image: 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=2069&auto=format&fit=crop'
+  },
+  { 
+    title: 'Motor Vehicles', 
+    description: 'Secure car hauling for dealerships and private owners.',
+    image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Drive/Tow Away', 
+    description: 'Professional drivers to move your vehicles directly.',
+    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Logs & Lumber', 
+    description: 'Heavy-duty transport for forestry and construction timber.',
+    image: 'https://images.unsplash.com/photo-1541427468627-a89a96e5ca1d?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Building Materials', 
+    description: 'Timely delivery of construction supplies to job sites.',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Mobile Homes', 
+    description: 'Oversized load expertise for manufactured housing.',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Heavy Machinery', 
+    description: 'Lowboy and RGN services for industrial equipment.',
+    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Fresh Produce', 
+    description: 'Temperature-controlled reefer units for farm-fresh goods.',
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Liquids & Gases', 
+    description: 'Certified tanker transport for bulk liquids and chemicals.',
+    image: 'https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop'
+  },
+  { 
+    title: 'Intermodal Containers', 
+    description: 'Drayage services for port and rail container moves.',
+    image: 'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Passengers', 
+    description: 'Safe and comfortable charter transport services.',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop'
+  },
+  { 
+    title: 'Oilfield Equipment', 
+    description: 'Hot shot and heavy haul for the energy sector.',
+    image: 'https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Livestock', 
+    description: 'Compassionate transport for cattle and other livestock.',
+    image: 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=2073&auto=format&fit=crop'
+  },
+  { 
+    title: 'Grain & Feed', 
+    description: 'Hopper bottom trailers for bulk agricultural products.',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Coal & Coke', 
+    description: 'Bulk transport for mining and industrial energy resources.',
+    image: 'https://images.unsplash.com/photo-1599939571322-792a326991f2?q=80&w=2065&auto=format&fit=crop'
+  },
+  { 
+    title: 'Meat Products', 
+    description: 'Strict cold chain compliance for meat and poultry.',
+    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Garbage & Refuse', 
+    description: 'Waste management logistics and disposal transport.',
+    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'US Mail', 
+    description: 'Contract carrier services for postal routes.',
+    image: 'https://images.unsplash.com/photo-1566847438217-76e82d383f84?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Chemicals', 
+    description: 'Hazmat-certified drivers for industrial chemicals.',
+    image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2072&auto=format&fit=crop'
+  },
+  { 
+    title: 'Dry Bulk Commodities', 
+    description: 'Pneumatic tankers for cement, sand, and powders.',
+    image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2072&auto=format&fit=crop'
+  },
+  { 
+    title: 'Refrigerated Food', 
+    description: 'Frozen and chilled food distribution.',
+    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2074&auto=format&fit=crop'
+  },
+  { 
+    title: 'Beverages', 
+    description: 'Secure transport for bottled drinks and liquid bulk.',
+    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=2069&auto=format&fit=crop'
+  },
+  { 
+    title: 'Paper Products', 
+    description: 'Dry van services for paper rolls and packaging.',
+    image: 'https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Utilities', 
+    description: 'Infrastructure support and utility pole transport.',
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Agricultural Supplies', 
+    description: 'Farm equipment and fertilizer delivery services.',
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Construction Equipment', 
+    description: 'Heavy haul for excavators, dozers, and cranes.',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+    title: 'Water Well Equipment', 
+    description: 'Drilling rig and pipe transport to remote sites.',
+    image: 'https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop'
+  }
+];
 
 export default function Hero() {
+  const [activeService, setActiveService] = useState(0);
   const [scrollY, setScrollY] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check if mobile on mount and resize
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    const interval = setInterval(() => {
+      setActiveService((prev) => (prev + 1) % services.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
+  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', checkMobile);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Background Image with Parallax Effect */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          // Disable parallax on mobile for better performance and positioning
-          transform: !isMobile ? `translateY(${scrollY * 0.5}px)` : 'none',
-        }}
-      >
-        {/* Responsive Background Images using Next.js Image */}
-        {isMobile ? (
+    <div className="relative min-h-screen flex items-center overflow-hidden bg-slate-50">
+      {/* Bright Background Image with Drive Animation */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div 
+          className="absolute inset-0 animate-drive" // Custom drive animation
+          style={{ transform: `translateY(${scrollY * 0.2}px) scale(1.1)` }} // Parallax + Scale for animation room
+        >
           <Image
-            src="/images/banner-truck-mobile.avif"
-            alt="Freight truck on highway"
+            src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?q=80&w=2072&auto=format&fit=crop"
+            alt="NIFE Transport Truck on Highway"
             fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-        ) : (
-          <Image
-            src="/images/banner-truck.avif"
-            alt="Freight truck on highway"
-            fill
-            priority
             className="object-cover"
-            style={{ objectPosition: 'center 40%' }}
             sizes="100vw"
           />
-        )}
-        {/* Gradient overlay - darker on mobile for better text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1B4965]/85 via-[#1B4965]/80 to-[#0a1f2e]/90 md:from-[#1B4965]/75 md:via-[#1B4965]/70 md:to-[#0a1f2e]/80" />
+        </div>
+        {/* Professional Gradient Overlay - Black for cinematic/industrial feel */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
       </div>
 
-      {/* Animated Gradient Overlay - very subtle */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#1B4965]/40 via-transparent to-[#1B4965]/40 animate-pulse-slow" />
-
-      {/* Geometric Shapes - moved behind content */}
-      <div className="absolute inset-0 z-10 overflow-hidden opacity-10">
-        <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute top-1/2 -left-40 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute bottom-20 right-1/4 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-      </div>
-
-      {/* Hero Content */}
-      <div className="relative z-20 flex min-h-screen items-center">
-        <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 sm:py-28 md:py-32 lg:px-8 lg:py-36">
-          <div className="text-center">
-            {/* Animated Badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-white/20 sm:mb-8 sm:px-5 sm:py-2.5">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
-              </span>
-              <span className="text-xs font-semibold text-white sm:text-sm">Professional Freight Services</span>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
+          {/* Content Column */}
+          <div className="max-w-2xl text-white">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-xs font-bold uppercase tracking-wider">Reliable Nationwide Shipping</span>
             </div>
-
-            {/* Main Heading with Gradient Text */}
-            <h1 className="mb-4 text-3xl font-bold leading-tight text-white sm:mb-5 sm:text-4xl md:text-5xl lg:mb-6 lg:text-6xl xl:text-7xl 2xl:text-8xl">
-              Reliable Freight
-              <br />
-              <span className="relative inline-block">
-                <span className="absolute -inset-1 block bg-gradient-to-r from-white/20 to-transparent blur-xl"></span>
-                <span className="relative bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                  Shipping Solutions
-                </span>
+            
+            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6">
+              Moving Your <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">
+                Business Forward
               </span>
             </h1>
-
-            {/* Subheading */}
-            <p className="mx-auto mb-8 max-w-3xl px-4 text-base leading-relaxed text-white/95 sm:mb-10 sm:px-0 sm:text-lg md:text-xl lg:mb-12 lg:text-2xl">
-              Your trusted partner for efficient, on-time delivery solutions. 
-              <br className="hidden sm:block" />
-              From coast to coast, we move your freight with care and precision.
+            
+            <p className="text-lg text-blue-50 mb-8 leading-relaxed max-w-lg font-medium">
+              We deliver more than just freight. We deliver peace of mind with on-time performance, real-time tracking, and dedicated support.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="mb-12 flex flex-col items-center justify-center gap-3 px-4 sm:mb-16 sm:flex-row sm:gap-4 sm:px-0 md:mb-20">
-              <Link
-                href="/contact-us"
-                className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-[#1B4965] shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-white/30 sm:w-auto sm:px-8 sm:py-4 sm:text-base lg:px-10 lg:py-5 lg:text-lg"
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link 
+                href="/contact-us" 
+                className="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-white text-[#1B4965] font-bold text-lg shadow-xl hover:bg-blue-50 transition-all transform hover:-translate-y-1"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-white to-blue-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
-                <span className="relative z-10 flex items-center gap-2">
-                  Get a Free Quote
-                  <svg
-                    className="h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
+                Get a Quote
               </Link>
-
-              <Link
-                href="/services"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-white/40 bg-white/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-white/60 hover:bg-white/20 sm:w-auto sm:px-8 sm:py-4 sm:text-base lg:px-10 lg:py-5 lg:text-lg"
+              <Link 
+                href="/services" 
+                className="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-transparent border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-[#1B4965] transition-all"
               >
-                Explore Services
-                <svg
-                  className="h-4 w-4 transition-transform group-hover:rotate-45 sm:h-5 sm:w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                </svg>
+                Our Services
               </Link>
             </div>
-
-            {/* Stats Section with Enhanced Cards */}
-            <div className="mt-12 grid grid-cols-1 gap-4 px-4 sm:mt-16 sm:grid-cols-3 sm:gap-6 sm:px-0 md:mt-20 lg:mt-24 lg:gap-8">
-              <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-md transition-all duration-500 hover:scale-105 hover:bg-white/15 hover:shadow-2xl sm:p-7 lg:p-8">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-                <div className="relative">
-                  <div className="mb-1 text-4xl font-bold text-white sm:mb-2 sm:text-5xl lg:text-6xl">500+</div>
-                  <div className="text-sm font-semibold text-white/90 sm:text-base">Deliveries Monthly</div>
-                  <div className="mt-2 h-1 w-12 rounded-full bg-white/40 transition-all duration-500 group-hover:w-full sm:mt-3 sm:w-16"></div>
-                </div>
+            
+            {/* Trust Indicators */}
+            <div className="mt-12 flex items-center gap-8 text-sm font-medium text-blue-100">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>98% On-Time</span>
               </div>
-
-              <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-md transition-all duration-500 hover:scale-105 hover:bg-white/15 hover:shadow-2xl sm:p-7 lg:p-8">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-                <div className="relative">
-                  <div className="mb-1 text-4xl font-bold text-white sm:mb-2 sm:text-5xl lg:text-6xl">98%</div>
-                  <div className="text-sm font-semibold text-white/90 sm:text-base">On-Time Delivery</div>
-                  <div className="mt-2 h-1 w-12 rounded-full bg-white/40 transition-all duration-500 group-hover:w-full sm:mt-3 sm:w-16"></div>
-                </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>24/7 Support</span>
               </div>
+            </div>
+          </div>
 
-              <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-md transition-all duration-500 hover:scale-105 hover:bg-white/15 hover:shadow-2xl sm:p-7 lg:p-8">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-                <div className="relative">
-                  <div className="mb-1 text-4xl font-bold text-white sm:mb-2 sm:text-5xl lg:text-6xl">24/7</div>
-                  <div className="text-sm font-semibold text-white/90 sm:text-base">Customer Support</div>
-                  <div className="mt-2 h-1 w-12 rounded-full bg-white/40 transition-all duration-500 group-hover:w-full sm:mt-3 sm:w-16"></div>
+          {/* Service Spotlight Column */}
+          <div className="hidden lg:block">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md ml-auto transform transition-all hover:scale-[1.02] relative overflow-hidden border border-white/40 backdrop-blur-sm">
+              
+              {/* Tech Pattern Background */}
+              <div className="absolute inset-0 opacity-[0.03]" 
+                style={{ 
+                  backgroundImage: 'radial-gradient(#1B4965 1px, transparent 1px)', 
+                  backgroundSize: '20px 20px' 
+                }} 
+              />
+              
+              {/* Decorative Gradient Blob */}
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50 pointer-events-none" />
+
+              <div className="relative z-10">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-xs font-bold text-blue-400 uppercase tracking-widest">Service Spotlight</h3>
+                  <div className="p-2 bg-blue-50 rounded-lg">
+                    <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                </div>
+                
+                <div className="h-64 relative">
+                  {services.map((service, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-all duration-500 transform ${
+                        index === activeService 
+                          ? 'opacity-100 translate-x-0' 
+                          : 'opacity-0 translate-x-8 pointer-events-none'
+                      }`}
+                    >
+                      {/* Featured Image instead of Icon */}
+                      <div className="relative w-full h-32 rounded-xl overflow-hidden mb-6 shadow-md">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      
+                      <h4 className="text-2xl font-bold text-slate-800 mb-2">{service.title}</h4>
+                      <p className="text-slate-600 leading-relaxed text-sm">{service.description}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Progress Indicators */}
+                <div className="flex gap-1.5 mt-6 overflow-hidden">
+                  {services.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveService(index)}
+                      className={`h-1 rounded-full transition-all duration-300 ${
+                        index === activeService ? 'w-6 bg-[#1B4965]' : 'w-1.5 bg-gray-200 hover:bg-gray-300'
+                      }`}
+                      aria-label={`View service ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-gray-100 flex justify-between items-center">
+                  <span className="text-sm font-medium text-gray-400">Need something else?</span>
+                  <Link href="/services" className="text-sm font-bold text-[#1B4965] hover:text-blue-700 flex items-center gap-1 transition-colors">
+                    View All Services
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
-      {/* Animated Scroll Indicator - hidden on mobile */}
-      <div className="absolute bottom-6 left-1/2 z-20 hidden -translate-x-1/2 animate-bounce sm:bottom-8 sm:block lg:bottom-10">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-white/80">Scroll Down</span>
-          <svg
-            className="h-5 w-5 text-white/80 sm:h-6 sm:w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
-      </div>
+      {/* Animation Styles */}
+      <style jsx>{`
+        @keyframes drive {
+          0% { transform: scale(1.1) translateX(0); }
+          50% { transform: scale(1.15) translateX(-2%); }
+          100% { transform: scale(1.1) translateX(0); }
+        }
+        .animate-drive {
+          animation: drive 20s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
