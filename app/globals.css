@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* NIFE Transport Brand Colors */
+  --nife-blue: #1B4965;
+  --nife-blue-dark: #153a52;
+  --nife-blue-light: #2a5f7f;
+  --nife-black: #0a0a0a;
+  --nife-white: #ffffff;
 }
 
 @theme inline {
@@ -19,8 +26,29 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom animations */
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
