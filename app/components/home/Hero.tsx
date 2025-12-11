@@ -196,8 +196,8 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Content Column */}
-          <div className="max-w-2xl text-white">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6">
+          <div className="max-w-2xl text-white text-center lg:text-left mx-auto lg:mx-0">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6 mx-auto lg:mx-0">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-wider">Reliable Nationwide Shipping</span>
             </div>
@@ -209,11 +209,11 @@ export default function Hero() {
               </span>
             </h1>
             
-            <p className="text-lg text-blue-50 mb-8 leading-relaxed max-w-lg font-medium">
+            <p className="text-lg text-blue-50 mb-8 leading-relaxed max-w-lg font-medium mx-auto lg:mx-0">
               We deliver more than just freight. We deliver peace of mind with on-time performance, real-time tracking, and dedicated support.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link 
                 href="/contact-us" 
                 className="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-white text-[#1B4965] font-bold text-lg shadow-xl hover:bg-blue-50 transition-all transform hover:-translate-y-1"
@@ -229,7 +229,7 @@ export default function Hero() {
             </div>
             
             {/* Trust Indicators */}
-            <div className="mt-12 flex items-center gap-8 text-sm font-medium text-blue-100">
+            <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 text-sm font-medium text-blue-100">
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

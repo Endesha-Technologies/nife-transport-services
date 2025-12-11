@@ -249,10 +249,10 @@ export default function ServicesSummary() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40">
         
         {/* Integrated Header & Services Section */}
-        <div className="mb-24 lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+        <div className="mb-24 flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           {/* Left Column: Text Content */}
-          <FadeIn className="mb-12 lg:mb-0 order-2 lg:order-1">
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1.5 text-sm font-bold uppercase tracking-wider text-blue-600 shadow-sm border border-blue-100">
+          <FadeIn className="order-2 lg:order-1 text-center lg:text-left">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1.5 text-sm font-bold uppercase tracking-wider text-blue-600 shadow-sm border border-blue-100 mx-auto lg:mx-0">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
@@ -267,12 +267,12 @@ export default function ServicesSummary() {
               </span>
             </h2>
             
-            <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-              From the warehouse floor to the open road, our operations are powered by precision and care. We don't just drive trucks; we manage the entire lifecycle of your freight with dedicated teams for packing, loading, and specialized handling.
+            <p className="text-gray-600 mb-8 leading-relaxed text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
+              From the warehouse floor to the open road, our operations are powered by precision and care. We don&apos;t just drive trucks; we manage the entire lifecycle of your freight with dedicated teams for packing, loading, and specialized handling.
             </p>
             
             <div className="space-y-6 mb-10">
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
                 <div className="shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl">
                   🏗️
                 </div>
@@ -281,7 +281,7 @@ export default function ServicesSummary() {
                   <p className="text-sm text-gray-600">Professional loading, packing, and forklift services to ensure cargo safety from dock to door.</p>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
                 <div className="shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl">
                   🚛
                 </div>
@@ -290,7 +290,7 @@ export default function ServicesSummary() {
                   <p className="text-sm text-gray-600">From flatbeds to reefers, we have the right truck for every specific need, maintained to the highest standards.</p>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
                 <div className="shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl">
                   👨‍✈️
                 </div>
@@ -310,9 +310,9 @@ export default function ServicesSummary() {
           </FadeIn>
 
           {/* Right Column: Enhanced Image Collage */}
-          <div className="relative h-[700px] w-full order-1 lg:order-2 perspective-1000">
+          <div className="relative h-[500px] sm:h-[700px] w-full order-1 lg:order-2 perspective-1000">
              {/* Image 1: Main Truck (Top Right) */}
-             <FadeIn delay={200} className="absolute top-0 right-0 w-3/4 h-1/2 rounded-2xl overflow-hidden shadow-2xl z-10">
+             <FadeIn delay={200} className="absolute top-0 right-0 w-3/4 h-[55%] sm:h-1/2 rounded-2xl overflow-hidden shadow-2xl z-10">
                 <Image
                   src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
                   alt="Heavy Haul Truck"
@@ -322,7 +322,7 @@ export default function ServicesSummary() {
              </FadeIn>
 
              {/* Image 2: Warehouse/Loading (Bottom Left) */}
-             <FadeIn delay={400} className="absolute bottom-12 left-0 w-3/5 h-2/5 rounded-2xl overflow-hidden shadow-2xl z-20 border-4 border-white">
+             <FadeIn delay={400} className="absolute bottom-12 left-0 w-3/5 h-[45%] sm:h-2/5 rounded-2xl overflow-hidden shadow-2xl z-20 border-4 border-white">
                 <Image
                   src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop"
                   alt="Warehouse Operations"
@@ -332,7 +332,7 @@ export default function ServicesSummary() {
              </FadeIn>
 
              {/* Image 3: Driver/Action (Center Overlay) */}
-             <FadeIn delay={600} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-full overflow-hidden shadow-2xl z-30 border-4 border-white hidden sm:block">
+             <FadeIn delay={600} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-56 sm:h-56 rounded-full overflow-hidden shadow-2xl z-30 border-4 border-white">
                 <Image
                   src="https://images.unsplash.com/photo-1617720366949-6f374b87d13c?q=80&w=2070&auto=format&fit=crop" 
                   alt="Professional Driver"
@@ -342,7 +342,7 @@ export default function ServicesSummary() {
              </FadeIn>
 
              {/* Image 4: Expedited/Small (Top Left) */}
-             <FadeIn delay={300} className="absolute top-20 left-4 w-48 h-40 rounded-xl overflow-hidden shadow-xl z-10 border-2 border-white hidden lg:block">
+             <FadeIn delay={300} className="absolute top-12 left-0 w-28 h-24 lg:top-20 lg:left-4 lg:w-48 lg:h-40 rounded-xl overflow-hidden shadow-xl z-10 border-2 border-white">
                 <Image
                   src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070&auto=format&fit=crop"
                   alt="Expedited Transport"
@@ -352,7 +352,7 @@ export default function ServicesSummary() {
              </FadeIn>
 
              {/* Image 5: Forklift/Loading (Bottom Right) */}
-             <FadeIn delay={500} className="absolute bottom-0 right-8 w-48 h-48 rounded-xl overflow-hidden shadow-xl z-20 border-2 border-white hidden sm:block">
+             <FadeIn delay={500} className="absolute bottom-8 right-0 w-28 h-28 sm:bottom-0 sm:right-8 sm:w-48 sm:h-48 rounded-xl overflow-hidden shadow-xl z-20 border-2 border-white">
                 <Image
                   src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2072&auto=format&fit=crop"
                   alt="Loading Operations"
@@ -402,8 +402,8 @@ export default function ServicesSummary() {
              </FadeIn>
              
              {/* Decorative Blobs */}
-             <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-100 rounded-full -z-10 blur-3xl opacity-50" />
-             <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-cyan-100 rounded-full -z-10 blur-3xl opacity-50" />
+             <div className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-80 sm:h-80 bg-blue-100 rounded-full -z-10 blur-3xl opacity-50" />
+             <div className="absolute top-1/4 left-1/4 w-40 h-40 sm:w-80 sm:h-80 bg-cyan-100 rounded-full -z-10 blur-3xl opacity-50" />
           </div>
         </div>
 
