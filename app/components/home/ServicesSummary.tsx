@@ -182,44 +182,7 @@ const cargoItems = [
   },
 ];
 
-const featuredServices = [
-  {
-    title: 'Heavy Haul Logistics',
-    subtitle: 'SPECIALIZED TRANSPORT',
-    description: 'Expert handling of oversized loads and industrial machinery. We have the specialized equipment and permits to move your heaviest assets safely.',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Temperature Controlled',
-    subtitle: 'COLD CHAIN SOLUTIONS',
-    description: 'State-of-the-art refrigerated transport for pharmaceuticals, fresh produce, and sensitive goods. Precise temperature monitoring from pickup to delivery.',
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop', 
-  },
-  {
-    title: 'Nationwide Freight',
-    subtitle: 'GENERAL CARGO',
-    description: 'Reliable coast-to-coast shipping for all standard cargo. Our extensive network ensures your goods reach their destination on time, every time.',
-    image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Warehousing & Distribution',
-    subtitle: 'STORAGE SOLUTIONS',
-    description: 'Secure, climate-controlled warehousing and efficient distribution services. We manage your inventory with advanced tracking systems for seamless supply chain operations.',
-    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Expedited Shipping',
-    subtitle: 'TIME-CRITICAL DELIVERY',
-    description: 'When time is of the essence, our expedited shipping services ensure your urgent cargo arrives on schedule. Dedicated vehicles and team drivers available 24/7.',
-    image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Project Cargo',
-    subtitle: 'COMPLEX LOGISTICS',
-    description: 'Comprehensive management of complex, high-value, and critical projects. From planning to execution, we handle every detail of your large-scale transport needs.',
-    image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2070&auto=format&fit=crop',
-  }
-];
+
 
 // Custom FadeIn Component for Scroll Animations
 const FadeIn = ({ children, delay = 0, className = '' }: { children: React.ReactNode, delay?: number, className?: string }) => {
@@ -267,80 +230,181 @@ export default function ServicesSummary() {
 
   return (
     <section className="relative bg-white pb-24 lg:pb-32">
-      {/* Wave Transition from Hero */}
-      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none rotate-180 z-10">
-        <svg className="relative block w-[calc(100%+1.3px)] h-[80px] sm:h-[120px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#1B4965" fillOpacity="0.4"></path>
-          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#ffffff"></path>
+      {/* Clean Curve Transition from Hero */}
+      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden z-10 -mt-10 sm:-mt-16 lg:-mt-20">
+        <svg 
+          className="relative block w-full h-10 sm:h-16 lg:h-20" 
+          data-name="Layer 1" 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 1200 120" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+            fill="#ffffff" 
+          />
         </svg>
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40">
         
-        {/* Section Header */}
-        <FadeIn className="mb-12 sm:mb-16 md:mb-20 text-center max-w-4xl mx-auto">
-          <span className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600 shadow-sm border border-blue-100">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
+        {/* Integrated Header & Services Section */}
+        <div className="mb-24 flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          {/* Left Column: Text Content */}
+          <FadeIn className="order-2 lg:order-1 text-center lg:text-left">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1.5 text-sm font-bold uppercase tracking-wider text-blue-600 shadow-sm border border-blue-100 mx-auto lg:mx-0">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
+              </span>
+              Comprehensive Logistics
             </span>
-            Comprehensive Logistics
-          </span>
-          <h2 className="mb-4 sm:mb-6 text-3xl font-extrabold text-[#1B4965] sm:text-4xl md:text-5xl lg:text-6xl tracking-tight">
-            Freight Solutions Built for <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-              Reliability & Speed
-            </span>
-          </h2>
-          <p className="mx-auto mb-6 sm:mb-8 max-w-2xl text-base sm:text-lg text-gray-600 leading-relaxed px-4 sm:px-0">
-            From complex heavy hauls to urgent expedited shipments, we deliver the expertise and capacity to keep your supply chain moving seamlessly across North America.
-          </p>
-          <div className="mx-auto h-1.5 w-16 sm:w-24 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500" />
-        </FadeIn>
-
-        {/* Compact Featured Services Grid */}
-        <div className="mb-16 sm:mb-20 md:mb-24 grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {featuredServices.map((service, index) => (
-            <FadeIn key={index} delay={index * 100}>
-              <div className="group relative flex h-full flex-col">
-                {/* Image Container */}
-                <div className="relative h-56 sm:h-64 md:h-72 w-full overflow-hidden rounded-2xl shadow-lg">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1B4965]/90 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
+            
+            <h2 className="mb-6 text-3xl font-extrabold text-[#1B4965] sm:text-4xl lg:text-5xl tracking-tight">
+              Freight Solutions Built for <br className="hidden xl:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+                Reliability & Speed
+              </span>
+            </h2>
+            
+            <p className="text-gray-600 mb-8 leading-relaxed text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
+              From the warehouse floor to the open road, our operations are powered by precision and care. We don&apos;t just drive trucks; we manage the entire lifecycle of your freight with dedicated teams for packing, loading, and specialized handling.
+            </p>
+            
+            <div className="space-y-6 mb-10">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
+                <div className="shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl">
+                  🏗️
                 </div>
-
-                {/* Overlapping Text Card */}
-                <div className="relative -mt-12 sm:-mt-16 mx-3 sm:mx-4 flex-1 rounded-xl bg-white p-5 sm:p-6 shadow-xl border border-gray-100 transition-transform duration-500 group-hover:-translate-y-2">
-                  <div className="mb-2 sm:mb-3 flex items-center gap-2">
-                    <div className="h-px w-4 sm:w-6 bg-blue-600" />
-                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-blue-600">
-                      {service.subtitle}
-                    </span>
-                  </div>
-                  <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl font-bold text-[#1B4965]">
-                    {service.title}
-                  </h3>
-                  <p className="mb-3 sm:mb-4 text-sm leading-relaxed text-gray-600">
-                    {service.description}
-                  </p>
-                  <Link 
-                    href="/services" 
-                    className="group/link inline-flex items-center text-xs font-bold uppercase tracking-wide text-[#1B4965] hover:text-blue-600"
-                  >
-                    Learn More
-                    <svg className="ml-2 h-3 w-3 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
+                <div>
+                  <h4 className="font-bold text-[#1B4965]">Expert Handling</h4>
+                  <p className="text-sm text-gray-600">Professional loading, packing, and forklift services to ensure cargo safety from dock to door.</p>
                 </div>
               </div>
-            </FadeIn>
-          ))}
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
+                <div className="shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl">
+                  🚛
+                </div>
+                <div>
+                  <h4 className="font-bold text-[#1B4965]">Diverse Fleet</h4>
+                  <p className="text-sm text-gray-600">From flatbeds to reefers, we have the right truck for every specific need, maintained to the highest standards.</p>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
+                <div className="shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl">
+                  👨‍✈️
+                </div>
+                <div>
+                  <h4 className="font-bold text-[#1B4965]">Dedicated Drivers</h4>
+                  <p className="text-sm text-gray-600">Experienced professionals committed to on-time, safe delivery and exceptional service.</p>
+                </div>
+              </div>
+            </div>
+
+            <Link 
+              href="/services" 
+              className="inline-flex items-center justify-center rounded-xl bg-[#1B4965] px-8 py-4 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-blue-700"
+            >
+              Explore Our Services
+            </Link>
+          </FadeIn>
+
+          {/* Right Column: Enhanced Image Collage */}
+          <div className="relative h-[500px] sm:h-[700px] w-full order-1 lg:order-2 perspective-1000">
+             {/* Image 1: Main Truck (Top Right) */}
+             <FadeIn delay={200} className="absolute top-0 right-0 w-3/4 h-[55%] sm:h-1/2 rounded-2xl overflow-hidden shadow-2xl z-10">
+                <Image
+                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
+                  alt="Heavy Haul Truck"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+             </FadeIn>
+
+             {/* Image 2: Warehouse/Loading (Bottom Left) */}
+             <FadeIn delay={400} className="absolute bottom-12 left-0 w-3/5 h-[45%] sm:h-2/5 rounded-2xl overflow-hidden shadow-2xl z-20 border-4 border-white">
+                <Image
+                  src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop"
+                  alt="Warehouse Operations"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+             </FadeIn>
+
+             {/* Image 3: Driver/Action (Center Overlay) */}
+             <FadeIn delay={600} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-56 sm:h-56 rounded-full overflow-hidden shadow-2xl z-30 border-4 border-white">
+                <Image
+                  src="https://images.unsplash.com/photo-1617720366949-6f374b87d13c?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Professional Driver"
+                  fill
+                  className="object-cover hover:scale-110 transition-transform duration-700"
+                />
+             </FadeIn>
+
+             {/* Image 4: Expedited/Small (Top Left) */}
+             <FadeIn delay={300} className="absolute top-12 left-0 w-28 h-24 lg:top-20 lg:left-4 lg:w-48 lg:h-40 rounded-xl overflow-hidden shadow-xl z-10 border-2 border-white">
+                <Image
+                  src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070&auto=format&fit=crop"
+                  alt="Expedited Transport"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+             </FadeIn>
+
+             {/* Image 5: Forklift/Loading (Bottom Right) */}
+             <FadeIn delay={500} className="absolute bottom-8 right-0 w-28 h-28 sm:bottom-0 sm:right-8 sm:w-48 sm:h-48 rounded-xl overflow-hidden shadow-xl z-20 border-2 border-white">
+                <Image
+                  src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2072&auto=format&fit=crop"
+                  alt="Loading Operations"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+             </FadeIn>
+
+             {/* Image 6: Flatbed/Industrial (Middle Right Edge) */}
+             <FadeIn delay={700} className="absolute top-1/2 right-0 translate-x-4 -translate-y-12 w-40 h-40 rounded-xl overflow-hidden shadow-xl z-20 border-2 border-white hidden xl:block">
+                <Image
+                  src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=2069&auto=format&fit=crop"
+                  alt="Industrial Transport"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+             </FadeIn>
+
+             {/* Image 7: Port/Global (Top Center) */}
+             <FadeIn delay={350} className="absolute top-4 left-1/3 w-48 h-32 rounded-xl overflow-hidden shadow-xl z-15 border-2 border-white hidden lg:block">
+                <Image
+                  src="https://images.unsplash.com/photo-1494412574643-35d324698420?q=80&w=2070&auto=format&fit=crop"
+                  alt="Global Logistics"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+             </FadeIn>
+
+             {/* Image 8: Logistics Planning (Bottom Center-Left) */}
+             <FadeIn delay={450} className="absolute bottom-32 left-1/3 w-32 h-32 rounded-lg overflow-hidden shadow-xl z-25 border-2 border-white hidden lg:block">
+                <Image
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop"
+                  alt="Logistics Planning"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+             </FadeIn>
+
+             {/* Image 9: Technology/Tracking (Middle Left Edge) */}
+             <FadeIn delay={650} className="absolute top-1/2 left-0 -translate-x-6 w-36 h-36 rounded-xl overflow-hidden shadow-xl z-20 border-2 border-white hidden xl:block">
+                <Image
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                  alt="Logistics Technology"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+             </FadeIn>
+             
+             {/* Decorative Blobs */}
+             <div className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-80 sm:h-80 bg-blue-100 rounded-full -z-10 blur-3xl opacity-50" />
+             <div className="absolute top-1/4 left-1/4 w-40 h-40 sm:w-80 sm:h-80 bg-cyan-100 rounded-full -z-10 blur-3xl opacity-50" />
+          </div>
         </div>
 
         {/* Infinite Scroll Ticker */}
