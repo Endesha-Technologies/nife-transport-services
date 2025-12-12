@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// --- CUSTOM HOOKS & UTILS,---
+// --- CUSTOM HOOKS & UTILS ---
 
 function use3DTilt(ref: React.RefObject<HTMLDivElement | null>, intensity = 15) {
     const [transform, setTransform] = useState('');
@@ -270,7 +270,7 @@ export default function About() {
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                        {/* Left Side - Professional Truck Image */}
+                        {/* Left-Side - Professional Truck Image */}
                         <div className="relative group" data-aos="fade-right">
                             {/* Main Image Container */}
                             <div className="relative h-[400px] lg:h-[500px] rounded-sm overflow-hidden shadow-xl">
