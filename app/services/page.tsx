@@ -1,12 +1,12 @@
-export default function Services() {
-    return (
-        <div className="min-h-screen bg-gray-50 pt-20 lg:pt-24">
-            <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-                <h1 className="text-4xl font-bold text-gray-900">Our Services</h1>
-                <p className="mt-4 text-lg text-gray-600">
-                    Discover our comprehensive freight and trucking services.
-                </p>
-            </div>
-        </div>
-    );
+import type { Metadata } from 'next';
+// Client component import
+import ServicesClient from './ServicesClientComponent';
+
+export const metadata: Metadata = {
+  title: 'Our Services | Nife Transport Services',
+  description: 'Comprehensive freight and trucking services including general freight, construction materials, temperature-controlled goods, and heavy haul logistics.',
+};
+
+export default function ServicesPage() {
+  return <ServicesClient />;
 }

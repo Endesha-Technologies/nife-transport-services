@@ -196,7 +196,7 @@ export default function Hero() {
           }}
         />
         {/* Optimized gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/75 via-black/40 to-transparent" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
@@ -211,7 +211,7 @@ export default function Hero() {
             
             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6">
               Moving Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200">
                 Business Forward
               </span>
             </h1>
