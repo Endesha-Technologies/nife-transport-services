@@ -216,11 +216,11 @@ export default function About() {
     const [activeFleetIndex, setActiveFleetIndex] = useState(0);
 
     const fleetData = [
-        { name: "Dry Van", desc: "Versatile protection for general freight.", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" },
-        { name: "Refrigerated", desc: "Climate control for sensitive goods.", img: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?q=80&w=2065&auto=format&fit=crop" },
+        { name: "Dry Van", desc: "Versatile protection for general freight.", img: "/images/img2.jpg" },
+        { name: "Refrigerated", desc: "Climate control for sensitive goods.", img: "/images/img1.jpg" },
         { name: "Flatbed", desc: "Heavy-duty for oversized loads.", img: "https://images.unsplash.com/photo-1591768793355-74d04bb6608f?q=80&w=2072&auto=format&fit=crop" },
         { name: "Step Deck", desc: "Height clearance for tall cargo.", img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop" },
-        { name: "Straight Truck", desc: "Agile urban delivery solutions.", img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074&auto=format&fit=crop" }
+        { name: "Straight Truck", desc: "Agile urban delivery solutions.", img: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop" }
     ];
 
     return (
@@ -270,7 +270,7 @@ export default function About() {
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                        {/* Left Side - Professional Truck Image */}
+                        {/* Left-Side - Professional Truck Image */}
                         <div className="relative group" data-aos="fade-right">
                             {/* Main Image Container */}
                             <div className="relative h-[400px] lg:h-[500px] rounded-sm overflow-hidden shadow-xl">
