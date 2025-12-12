@@ -245,7 +245,7 @@ export default function About() {
                 </div>
 
                 {/* Hero Content Overlay */}
-                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20" ref={heroParallax.ref as any}>
+                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20" style={{ transform: `translateY(${heroParallax}px)` }}>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight mb-6 drop-shadow-2xl">
                         NIFE <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Transport</span><br />
                         {/* Driven by <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">Excellence</span>. */}
