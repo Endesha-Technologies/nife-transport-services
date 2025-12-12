@@ -229,18 +229,19 @@ export default function About() {
             {/* HERO SECTION - CINEMATIC BACKGROUND */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
                 {/* High-Quality Background Image with Ken Burns Effect */}
-                <div className="absolute inset-0 w-full h-full z-0 animate-ken-burns">
-                    <Image
-                        src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2560&auto=format&fit=crop"
-                        alt="NIFE Transport Fleet"
-                        fill
-                        priority
-                        className="object-cover"
-                        sizes="100vw"
-                        quality={90}
-                    />
+                {/* Background Video */}
+                <div className="absolute inset-0 w-full h-full z-0">
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="object-cover w-full h-full opacity-80"
+                    >
+                        <source src="/images/vid.mp4" type="video/mp4" />
+                    </video>
                     {/* Modern Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
                 </div>
 
                 {/* Hero Content Overlay */}
