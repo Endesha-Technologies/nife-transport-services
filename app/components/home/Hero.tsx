@@ -173,23 +173,30 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center overflow-hidden bg-slate-50">
-      {/* Bright Background Image with Drive Animation */}
+    <div className="relative min-h-screen flex items-center overflow-hidden bg-slate-900">
+      {/* Animated Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div 
-          className="absolute inset-0 animate-drive" // Custom drive animation
-          style={{ transform: `translateY(${scrollY * 0.2}px) scale(1.1)` }} // Parallax + Scale for animation room
+          className="absolute inset-0 animate-truck-drive"
+          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?q=80&w=2072&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop"
             alt="NIFE Transport Truck on Highway"
             fill
+            priority
             className="object-cover"
             sizes="100vw"
           />
         </div>
-        {/* Professional Gradient Overlay - Black for cinematic/industrial feel */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+        {/* Animated speed lines overlay for motion effect */}
+        <div className="absolute inset-0 animate-speed-lines opacity-20 pointer-events-none" 
+          style={{
+            background: 'repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(255,255,255,0.1) 100px, rgba(255,255,255,0.1) 102px)',
+          }}
+        />
+        {/* Optimized gradient overlay */}
+        <div className="absolute inset-0 bg-linear-to-r from-black/75 via-black/40 to-transparent" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
@@ -204,7 +211,7 @@ export default function Hero() {
             
             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6">
               Moving Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200">
                 Business Forward
               </span>
             </h1>
@@ -326,15 +333,35 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Animation Styles */}
+      {/* CSS Animations for truck motion effect */}
       <style jsx>{`
-        @keyframes drive {
-          0% { transform: scale(1.1) translateX(0); }
-          50% { transform: scale(1.15) translateX(-2%); }
-          100% { transform: scale(1.1) translateX(0); }
+        @keyframes truck-drive {
+          0% { 
+            transform: scale(1.05) translateX(0);
+          }
+          50% { 
+            transform: scale(1.1) translateX(-3%);
+          }
+          100% { 
+            transform: scale(1.05) translateX(0);
+          }
         }
-        .animate-drive {
-          animation: drive 20s ease-in-out infinite;
+        
+        @keyframes speed-lines {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100px);
+          }
+        }
+        
+        .animate-truck-drive {
+          animation: truck-drive 15s ease-in-out infinite;
+        }
+        
+        .animate-speed-lines {
+          animation: speed-lines 1s linear infinite;
         }
       `}</style>
     </div>
