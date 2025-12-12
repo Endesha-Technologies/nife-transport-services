@@ -314,8 +314,8 @@ export default function ServicesSummary() {
              {/* Image 1: Main Truck (Top Right) */}
              <FadeIn delay={200} className="absolute top-0 right-0 w-3/4 h-[55%] sm:h-1/2 rounded-2xl overflow-hidden shadow-2xl z-10">
                 <Image
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
-                  alt="Heavy Haul Truck"
+                  src="/images/tow-truck.jpg"
+                  alt="Tow Truck Service"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -324,8 +324,8 @@ export default function ServicesSummary() {
              {/* Image 2: Warehouse/Loading (Bottom Left) */}
              <FadeIn delay={400} className="absolute bottom-12 left-0 w-3/5 h-[45%] sm:h-2/5 rounded-2xl overflow-hidden shadow-2xl z-20 border-4 border-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop"
-                  alt="Warehouse Operations"
+                  src="/images/animal-truck.jpg"
+                  alt="Animal Transport Truck"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -334,8 +334,8 @@ export default function ServicesSummary() {
              {/* Image 3: Driver/Action (Center Overlay) */}
              <FadeIn delay={600} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-56 sm:h-56 rounded-full overflow-hidden shadow-2xl z-30 border-4 border-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1617720366949-6f374b87d13c?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Professional Driver"
+                  src="/images/truck-dispatcher.jpg" 
+                  alt="Dispatcher at Work"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-700"
                 />
@@ -344,8 +344,8 @@ export default function ServicesSummary() {
              {/* Image 4: Expedited/Small (Top Left) */}
              <FadeIn delay={300} className="absolute top-12 left-0 w-28 h-24 lg:top-20 lg:left-4 lg:w-48 lg:h-40 rounded-xl overflow-hidden shadow-xl z-10 border-2 border-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070&auto=format&fit=crop"
-                  alt="Expedited Transport"
+                  src="/images/sealing.jpg"
+                  alt="Sealing Cargo"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -354,8 +354,8 @@ export default function ServicesSummary() {
              {/* Image 5: Forklift/Loading (Bottom Right) */}
              <FadeIn delay={500} className="absolute bottom-8 right-0 w-28 h-28 sm:bottom-0 sm:right-8 sm:w-48 sm:h-48 rounded-xl overflow-hidden shadow-xl z-20 border-2 border-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2072&auto=format&fit=crop"
-                  alt="Loading Operations"
+                  src="/images/refrigerator-truck.jpg"
+                  alt="refrigerated Truck"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -364,8 +364,8 @@ export default function ServicesSummary() {
              {/* Image 6: Flatbed/Industrial (Middle Right Edge) */}
              <FadeIn delay={700} className="absolute top-1/2 right-0 translate-x-4 -translate-y-12 w-40 h-40 rounded-xl overflow-hidden shadow-xl z-20 border-2 border-white hidden xl:block">
                 <Image
-                  src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=2069&auto=format&fit=crop"
-                  alt="Industrial Transport"
+                  src="/images/flatbed.jpg"
+                  alt="Flatbed Truck"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -374,8 +374,8 @@ export default function ServicesSummary() {
              {/* Image 7: Port/Global (Top Center) */}
              <FadeIn delay={350} className="absolute top-4 left-1/3 w-48 h-32 rounded-xl overflow-hidden shadow-xl z-15 border-2 border-white hidden lg:block">
                 <Image
-                  src="https://images.unsplash.com/photo-1494412574643-35d324698420?q=80&w=2070&auto=format&fit=crop"
-                  alt="Global Logistics"
+                  src="/images/close-up-deliver.jpg"
+                  alt="Close-up Delivery"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -384,8 +384,8 @@ export default function ServicesSummary() {
              {/* Image 8: Logistics Planning (Bottom Center-Left) */}
              <FadeIn delay={450} className="absolute bottom-32 left-1/3 w-32 h-32 rounded-lg overflow-hidden shadow-xl z-25 border-2 border-white hidden lg:block">
                 <Image
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop"
-                  alt="Logistics Planning"
+                  src="/images/warehouse-man.jpg"
+                  alt="Warehouse Manager"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -394,8 +394,8 @@ export default function ServicesSummary() {
              {/* Image 9: Technology/Tracking (Middle Left Edge) */}
              <FadeIn delay={650} className="absolute top-1/2 left-0 -translate-x-6 w-36 h-36 rounded-xl overflow-hidden shadow-xl z-20 border-2 border-white hidden xl:block">
                 <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                  alt="Logistics Technology"
+                  src="/images/cattle.jpg"
+                  alt="Warehouse Manager"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                 />
