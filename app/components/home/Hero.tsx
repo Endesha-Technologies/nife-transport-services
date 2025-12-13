@@ -181,10 +181,9 @@ export default function Hero() {
           style={{ transform: `translateY(${scrollY * 0.3}px)` }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?q=80&w=2072&auto=format&fit=crop"
             alt="NIFE Transport Truck on Highway"
             fill
-            priority
             className="object-cover"
             sizes="100vw"
           />
