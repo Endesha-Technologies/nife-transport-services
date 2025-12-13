@@ -116,28 +116,28 @@ export default function WhyChooseUs() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f2e] via-transparent to-transparent opacity-80" />
             
             {/* Floating Stats Card */}
-            <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
-              <div className="flex justify-between items-center text-white">
-                <div>
-                  <p className="text-sm font-medium text-blue-200 uppercase tracking-wider">Annual Miles</p>
-                  <p className="text-3xl font-bold">2.5M+</p>
+            <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 rounded-2xl">
+              <div className="flex flex-col md:flex-row justify-between items-center text-white gap-4 md:gap-0">
+                <div className="text-center md:text-left">
+                  <p className="text-xs md:text-sm font-medium text-blue-200 uppercase tracking-wider">Annual Miles</p>
+                  <p className="text-2xl md:text-3xl font-bold">2.5M+</p>
                 </div>
-                <div className="h-10 w-px bg-white/20" />
-                <div>
-                  <p className="text-sm font-medium text-blue-200 uppercase tracking-wider">Clients Served</p>
-                  <p className="text-3xl font-bold">500+</p>
+                <div className="h-px w-full md:h-10 md:w-px bg-white/20" />
+                <div className="text-center md:text-left">
+                  <p className="text-xs md:text-sm font-medium text-blue-200 uppercase tracking-wider">Clients Served</p>
+                  <p className="text-2xl md:text-3xl font-bold">500+</p>
                 </div>
-                <div className="h-10 w-px bg-white/20" />
-                <div>
-                  <p className="text-sm font-medium text-blue-200 uppercase tracking-wider">States Covered</p>
-                  <p className="text-3xl font-bold">48</p>
+                <div className="h-px w-full md:h-10 md:w-px bg-white/20" />
+                <div className="text-center md:text-left">
+                  <p className="text-xs md:text-sm font-medium text-blue-200 uppercase tracking-wider">States Covered</p>
+                  <p className="text-2xl md:text-3xl font-bold">48</p>
                 </div>
               </div>
             </div>
           </FadeIn>
 
           {/* Right Column: Content */}
-          <div className="space-y-12">
+          <div className="space-y-12 text-center lg:text-left">
             <FadeIn delay={200}>
               <span className="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-300 text-sm font-bold uppercase tracking-wider mb-4 border border-blue-500/30">
                 Why Partner With Us
@@ -148,7 +148,7 @@ export default function WhyChooseUs() {
                   You Can Count On
                 </span>
               </h2>
-              <p className="text-lg text-blue-100 leading-relaxed">
+              <p className="text-lg text-blue-100 leading-relaxed mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
                 In a fast-paced world, you need a logistics partner that moves as fast as you do. We combine cutting-edge technology with old-fashioned reliability to deliver a shipping experience that sets the standard.
               </p>
             </FadeIn>
@@ -156,7 +156,7 @@ export default function WhyChooseUs() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
                 <FadeIn key={index} delay={300 + (index * 100)}>
-                  <div className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                  <div className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center lg:items-start">
                     <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-500 text-white shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300">
                       {benefit.icon}
                     </div>
@@ -172,7 +172,7 @@ export default function WhyChooseUs() {
             <FadeIn delay={700} className="pt-4">
               <Link 
                 href="/about" 
-                className="inline-flex items-center text-white font-bold text-lg hover:text-blue-300 transition-colors group"
+                className="inline-flex items-center text-white font-bold text-lg hover:text-blue-300 transition-colors group justify-center lg:justify-start"
               >
                 Learn more about our company
                 <svg className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

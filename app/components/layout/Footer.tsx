@@ -27,12 +27,12 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center space-x-3">
+          <div className="lg:col-span-1 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start space-x-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-md border-2 border-white/20">
                 <span className="text-2xl font-bold text-white">N</span>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center md:items-start">
                 <span className="text-xl font-bold leading-tight text-white">
                   NIFE Transport
                 </span>
@@ -48,21 +48,21 @@ export default function Footer() {
             {/* Contact Information */}
             <div className="mt-6 space-y-3">
               {/* Address */}
-              <div className="flex items-start gap-3">
+              <div className="flex items-start justify-center md:justify-start gap-3">
                 <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-white/10">
                   <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <div className="text-sm text-white/90">
+                <div className="text-sm text-white/90 text-left">
                   <p className="font-medium">3733 Freedom Dr</p>
                   <p>Charlotte, NC 28208</p>
                 </div>
               </div>
               
               {/* Phone */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center md:justify-start gap-3">
                 <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-white/10">
                   <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -75,7 +75,7 @@ export default function Footer() {
             </div>
             
             {/* Social Media Icons */}
-            <div className="mt-6 flex space-x-4">
+            <div className="mt-6 flex justify-center md:justify-start space-x-4">
               <a
                 href="#"
                 className="group flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-110"
@@ -116,7 +116,7 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Company
             </h3>
@@ -125,7 +125,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-white/80 transition-colors duration-200 hover:text-white"
+                    className="group inline-flex items-center justify-center md:justify-start text-sm text-white/80 transition-colors duration-200 hover:text-white w-full md:w-auto"
                   >
                     <span className="h-1 w-1 rounded-full bg-white/60 transition-all duration-200 group-hover:w-2 group-hover:bg-white"></span>
                     <span className="ml-2">{link.name}</span>
@@ -136,7 +136,7 @@ export default function Footer() {
           </div>
 
           {/* Services Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Services
             </h3>
@@ -145,7 +145,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-white/80 transition-colors duration-200 hover:text-white"
+                    className="group inline-flex items-center justify-center md:justify-start text-sm text-white/80 transition-colors duration-200 hover:text-white w-full md:w-auto"
                   >
                     <span className="h-1 w-1 rounded-full bg-white/60 transition-all duration-200 group-hover:w-2 group-hover:bg-white"></span>
                     <span className="ml-2">{link.name}</span>
@@ -156,7 +156,7 @@ export default function Footer() {
           </div>
 
           {/* Support Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Support
             </h3>
@@ -165,7 +165,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-white/80 transition-colors duration-200 hover:text-white"
+                    className="group inline-flex items-center justify-center md:justify-start text-sm text-white/80 transition-colors duration-200 hover:text-white w-full md:w-auto"
                   >
                     <span className="h-1 w-1 rounded-full bg-white/60 transition-all duration-200 group-hover:w-2 group-hover:bg-white"></span>
                     <span className="ml-2">{link.name}</span>
