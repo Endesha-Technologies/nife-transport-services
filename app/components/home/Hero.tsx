@@ -209,12 +209,8 @@ export default function Hero() {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6">
-              Moving Your <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200">
-                Business Forward
-              </span>
-            </h1>
-            
+              We Care Every Mile
+                    </h1>
             <p className="text-lg text-blue-50 mb-8 leading-relaxed max-w-lg font-medium mx-auto lg:mx-0">
               We deliver more than just freight. We deliver peace of mind with on-time performance, real-time tracking, and dedicated support.
             </p>

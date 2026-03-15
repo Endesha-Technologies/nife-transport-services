@@ -85,7 +85,7 @@ const serviceCategories = [
     icon: Droplet,
     image: 'https://images.unsplash.com/photo-1590496793907-494d06b83718?q=80&w=2074&auto=format&fit=crop',
     items: [
-      { name: 'Liquids/Gases', image: 'https://images.unsplash.com/photo-1576613109713-0d5353268485?q=80&w=2070&auto=format&fit=crop' },
+      { name: 'Liquids/Gases', image: 'images/animal-truck.jpg' },
       { name: 'Chemicals', image: 'https://images.unsplash.com/photo-1605557202138-097824c3f5c4?q=80&w=2070&auto=format&fit=crop' },
       { name: 'Coal/Coke', image: 'https://images.unsplash.com/photo-1599940824399-b87987ce0799?q=80&w=2070&auto=format&fit=crop' },
       { name: 'Garbage/Refuse', image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop' },
