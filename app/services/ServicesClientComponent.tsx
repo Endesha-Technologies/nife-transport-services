@@ -63,35 +63,35 @@ const serviceCategories = [
       { name: 'Agricultural/Farm Supplies', image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070&auto=format&fit=crop' }
     ]
   },
-  {
-    id: 'heavy-specialized',
-    title: 'Heavy & Specialized',
-    description: 'Expert handling of oversized loads, vehicles, and specialized machinery.',
-    icon: Truck,
-    image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2076&auto=format&fit=crop',
-    items: [
-      { name: 'Machinery, Large Objects', image: 'https://images.unsplash.com/photo-1535157412991-2ef801c1748b?q=80&w=2070&auto=format&fit=crop' },
-      { name: 'Motor Vehicles', image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop' },
-      { name: 'Drive/Tow Away', image: 'https://images.unsplash.com/photo-1566008885218-90abf9200ddb?q=80&w=2070&auto=format&fit=crop' },
-      { name: 'Mobile Homes', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2070&auto=format&fit=crop' },
-      { name: 'Oilfield Equipment', image: 'https://images.unsplash.com/photo-1516937941348-c09639200241?q=80&w=2070&auto=format&fit=crop' },
-      { name: 'Intermodal Containers', image: 'https://images.unsplash.com/photo-1494412651409-ae5d985a5fbd?q=80&w=2070&auto=format&fit=crop' }
-    ]
-  },
-  {
-    id: 'bulk-hazmat',
-    title: 'Bulk & Hazardous',
-    description: 'Certified transport for liquids, chemicals, and regulated materials.',
-    icon: Droplet,
-    image: 'https://images.unsplash.com/photo-1590496793907-494d06b83718?q=80&w=2074&auto=format&fit=crop',
-    items: [
-      { name: 'Liquids/Gases', image: 'images/animal-truck.jpg' },
-      { name: 'Chemicals', image: 'https://images.unsplash.com/photo-1605557202138-097824c3f5c4?q=80&w=2070&auto=format&fit=crop' },
-      { name: 'Coal/Coke', image: 'https://images.unsplash.com/photo-1599940824399-b87987ce0799?q=80&w=2070&auto=format&fit=crop' },
-      { name: 'Garbage/Refuse', image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop' },
-      { name: 'Passengers', image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2070&auto=format&fit=crop' }
-    ]
-  }
+  // {
+  //   id: 'heavy-specialized',
+  //   title: 'Heavy & Specialized',
+  //   description: 'Expert handling of oversized loads, vehicles, and specialized machinery.',
+  //   icon: Truck,
+  //   image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2076&auto=format&fit=crop',
+  //   items: [
+  //     { name: 'Machinery, Large Objects', image: 'https://images.unsplash.com/photo-1535157412991-2ef801c1748b?q=80&w=2070&auto=format&fit=crop' },
+  //     { name: 'Motor Vehicles', image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop' },
+  //     { name: 'Drive/Tow Away', image: 'https://images.unsplash.com/photo-1566008885218-90abf9200ddb?q=80&w=2070&auto=format&fit=crop' },
+  //     { name: 'Mobile Homes', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2070&auto=format&fit=crop' },
+  //     { name: 'Oilfield Equipment', image: 'https://images.unsplash.com/photo-1516937941348-c09639200241?q=80&w=2070&auto=format&fit=crop' },
+  //     { name: 'Intermodal Containers', image: 'https://images.unsplash.com/photo-1494412651409-ae5d985a5fbd?q=80&w=2070&auto=format&fit=crop' }
+  //   ]
+  // },
+  // {
+  //   id: 'bulk-hazmat',
+  //   title: 'Bulk & Hazardous',
+  //   description: 'Certified transport for liquids, chemicals, and regulated materials.',
+  //   icon: Droplet,
+  //   image: 'https://images.unsplash.com/photo-1590496793907-494d06b83718?q=80&w=2074&auto=format&fit=crop',
+  //   items: [
+  //     { name: 'Liquids/Gases', image: 'images/animal-truck.jpg' },
+  //     { name: 'Chemicals', image: 'https://images.unsplash.com/photo-1605557202138-097824c3f5c4?q=80&w=2070&auto=format&fit=crop' },
+  //     { name: 'Coal/Coke', image: 'https://images.unsplash.com/photo-1599940824399-b87987ce0799?q=80&w=2070&auto=format&fit=crop' },
+  //     { name: 'Garbage/Refuse', image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop' },
+  //     { name: 'Passengers', image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2070&auto=format&fit=crop' }
+  //   ]
+  // }
 ];
 
 const features = [
