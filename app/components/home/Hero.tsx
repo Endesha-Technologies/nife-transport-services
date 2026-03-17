@@ -27,89 +27,9 @@ const services = [
     image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070&auto=format&fit=crop'
   },
   { 
-    //title: 'Drive/Tow Away', 
-    description: 'Professional drivers to move your vehicles directly.',
-    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Logs & Lumber', 
-    description: 'Heavy-duty transport for forestry and construction timber.',
-    image: 'https://images.unsplash.com/photo-1541427468627-a89a96e5ca1d?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Building Materials', 
-    description: 'Timely delivery of construction supplies to job sites.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Mobile Homes', 
-    description: 'Oversized load expertise for manufactured housing.',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Heavy Machinery', 
-    description: 'Lowboy and RGN services for industrial equipment.',
-    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    title: 'Fresh Produce', 
-    description: 'Temperature-controlled reefer units for farm-fresh goods.',
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Liquids & Gases', 
-    description: 'Certified tanker transport for bulk liquids and chemicals.',
-    image: 'https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop'
-  },
-  { 
     title: 'Intermodal Containers', 
     description: 'Drayage services for port and rail container moves.',
     image: 'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Passengers', 
-    description: 'Safe and comfortable charter transport services.',
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Oilfield Equipment', 
-    description: 'Hot shot and heavy haul for the energy sector.',
-    image: 'https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Livestock', 
-    description: 'Compassionate transport for cattle and other livestock.',
-    image: 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=2073&auto=format&fit=crop'
-  },
-  { 
-    title: 'Grain & Feed', 
-    description: 'Hopper bottom trailers for bulk agricultural products.',
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Coal & Coke', 
-    description: 'Bulk transport for mining and industrial energy resources.',
-    image: 'https://images.unsplash.com/photo-1599939571322-792a326991f2?q=80&w=2065&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Meat Products', 
-    description: 'Strict cold chain compliance for meat and poultry.',
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Garbage & Refuse', 
-    description: 'Waste management logistics and disposal transport.',
-    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'US Mail', 
-    description: 'Contract carrier services for postal routes.',
-    image: 'https://images.unsplash.com/photo-1566847438217-76e82d383f84?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Chemicals', 
-    description: 'Hazmat-certified drivers for industrial chemicals.',
-    image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2072&auto=format&fit=crop'
   },
   { 
     title: 'Dry Bulk Commodities', 
@@ -117,39 +37,14 @@ const services = [
     image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2072&auto=format&fit=crop'
   },
   { 
-    //title: 'Refrigerated Food', 
-    description: 'Frozen and chilled food distribution.',
-    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2074&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Beverages', 
-    description: 'Secure transport for bottled drinks and liquid bulk.',
-    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=2069&auto=format&fit=crop'
-  },
-  { 
     title: 'Paper Products', 
     description: 'Dry van services for paper rolls and packaging.',
     image: 'https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?q=80&w=2070&auto=format&fit=crop'
   },
   { 
-   //title: 'Utilities', 
-    description: 'Infrastructure support and utility pole transport.',
-    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
     title: 'Agricultural Supplies', 
     description: 'Farm equipment and fertilizer delivery services.',
     image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-    //title: 'Construction Equipment', 
-    description: 'Heavy haul for excavators, dozers, and cranes.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'
-  },
-  { 
-   //title: 'Water Well Equipment', 
-    description: 'Drilling rig and pipe transport to remote sites.',
-    image: 'https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop'
   }
 ];
 
